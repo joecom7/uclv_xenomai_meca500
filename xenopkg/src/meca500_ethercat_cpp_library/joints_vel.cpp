@@ -109,7 +109,7 @@ void get_joints_vel_with_jacobian(double velocity_x, float *joints, float *joint
             }
         }
     }
-    uint8_t out_of_range = 0;
+    unsigned short int out_of_range = 0;
     for(int i=0;i<6;i++) {
         if(fabs(pose[i]-initial_pose[i])>pose_tolerance[i]) {
             for(int i=0;i<6;i++) {
