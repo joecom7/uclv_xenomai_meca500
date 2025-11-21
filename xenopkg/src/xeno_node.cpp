@@ -628,7 +628,7 @@ int main(int argc, char *argv[])
     joint_service = node->create_service<xenopkg_interfaces::srv::JointSrv>("joint_position_srv", &service_cb);
     auto mode_service = node->create_service<xenopkg_interfaces::srv::SetMode>("set_mode_srv", &setmode_cb);
     // auto activate_vel_service=node->create_service<xenopkg_interfaces::srv::ActivateVel>("activate_vel_srv",&activate_vel_cb);
-    auto subscription = node->create_subscription<xenopkg_interfaces::msg::Float32Header>("/cmd_vel", 1, topic_callback);
+    auto subscription = node->create_subscription<xenopkg_interfaces::msg::Float32Header>("/cmd_vel_xeno", 1, topic_callback);
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "nodo creato");
 
     std::cout << "SOEM (Simple Open EtherCAT Master)\nStarting master...\n";
