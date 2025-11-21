@@ -33,7 +33,7 @@ RT_TASK spin_task;
 std::shared_ptr<rclcpp::Node> node;
 _Float64 n = 0;
 uint16 k = 1;            // moveid
-bool switch_control = 1; // variabile per proteggere la modalità di comando,defaul=1 perche accetta comandi in posizione,0 quando è in modalità velocità
+bool switch_control = 0;
 bool disactiveVelCmd = 0;
 bool checkActivate = 0;
 bool vel_cmd_arrived_ = 0;
@@ -466,7 +466,7 @@ void setmode_cb(const std::shared_ptr<xenopkg_interfaces::srv::SetMode::Request>
 //      while (!disactiveVelCmd)
 //     {
 
-//       // bool_vel = rclcpp::wait_for_message<std_msgs::msg::Float32MultiArray>(cmd_vel, node,"/cmd_vel", std::chrono::milliseconds(1));
+//       // bool_vel = rclcpp::wait_for_message<std_msgs::msg::Float32MultiArray>(cmd_vel, node,"/cmd_vel_xeno", std::chrono::milliseconds(1));
 
 //         // if (bool_vel)
 //         // {
